@@ -1,0 +1,42 @@
+---
+layout: default
+title: Videos
+seo_title: Videos | Science & Geography Explained | Learning with Chef
+description: Watch short, curious videos about space, physics, geography, and other sciences, with recaps and key takeaways from Learning with Chef.
+body_class: videos-page
+---
+<!-- Video List Section -->
+<section class="video-list section">
+
+  <div class="container">
+
+    <header class="list-header">
+      <h1>Videos</h1>
+      <p>Short, curious videos about space, physics, geography, and other sciences.</p>
+    </header>
+
+    {%- assign videos = site.videos | sort: 'date' | reverse %}
+    {%- for video in videos %}
+    <article class="video-card">
+      <a href="{{ video.url | relative_url }}" class="thumbnail" aria-hidden="true" tabindex="-1">
+        <img src="https://i.ytimg.com/vi/{{ video.youtube_id }}/oar2.jpg" alt="" loading="lazy">
+        <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+      </a>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="category">{{ video.topic }}</span>
+          <span class="separator" aria-hidden="true"></span>
+          <time datetime="{{ video.date | date: '%Y-%m-%d' }}">{{ video.date | date: '%B %-d, %Y' }}</time>
+          <span class="separator" aria-hidden="true"></span>
+          <span>{{ video.read_time }}</span>
+        </div>
+        <h2><a href="{{ video.url | relative_url }}">{{ video.title }}</a></h2>
+        <p>{{ video.summary }}</p>
+        <a href="{{ video.url | relative_url }}" class="read-more">Watch &amp; read the recap <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </article>
+    {%- endfor %}
+
+  </div>
+
+</section><!-- /Video List Section -->

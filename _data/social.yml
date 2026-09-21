@@ -1,0 +1,11 @@
+- name: YouTube
+  icon: bi-youtube
+  url: https://www.youtube.com/@learningwithchef/shorts
+
+- name: TikTok
+  icon: bi-tiktok
+  url: https://www.tiktok.com/@learningwithchef
+
+- name: Instagram
+  icon: bi-instagram
+  url: https://www.instagram.com/learningwithchef

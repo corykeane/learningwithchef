@@ -707,6 +707,7 @@ section,
   overflow: hidden;
 }
 
+.hero .content h1,
 .hero .content h2 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -715,6 +716,7 @@ section,
 }
 
 @media (max-width: 991px) {
+  .hero .content h1,
   .hero .content h2 {
     font-size: 2.5rem;
   }
@@ -2178,6 +2180,174 @@ section,
   .video-post .follow-card {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/*--------------------------------------------------------------
+# Video List Section
+--------------------------------------------------------------*/
+.video-list {
+  padding-top: 30px;
+}
+
+.video-list .list-header {
+  margin-bottom: 40px;
+}
+
+.video-list .list-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.video-list .list-header p {
+  font-size: 1.15rem;
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.video-list .video-card {
+  display: flex;
+  gap: 28px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--surface-color);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.video-list .video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.video-list .video-card+.video-card {
+  margin-top: 30px;
+}
+
+.video-list .video-card .thumbnail {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-list .video-card .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video-list .video-card:hover .thumbnail img {
+  transform: scale(1.05);
+}
+
+.video-list .video-card .thumbnail .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 26px;
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+  transform: translate(-50%, -50%);
+}
+
+.video-list .video-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-list .video-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 10px;
+}
+
+.video-list .video-card .card-meta .category {
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.video-list .video-card .card-meta .separator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.video-list .video-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.video-list .video-card h2 a {
+  color: var(--heading-color);
+}
+
+.video-list .video-card h2 a:hover {
+  color: var(--accent-color);
+}
+
+.video-list .video-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.video-list .video-card .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.video-list .video-card .read-more:hover i {
+  transform: translateX(3px);
+}
+
+.video-list .video-card .read-more i {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 991px) {
+  .video-list .list-header h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-list .video-card {
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .video-list .video-card .thumbnail {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .video-list .video-card h2 {
+    font-size: 1.4rem;
   }
 }
 

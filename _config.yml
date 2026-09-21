@@ -1,0 +1,30 @@
+title: Learning With Chef
+description: Learn about space, physics, and fascinating science through engaging videos, visuals, and storytelling. Discover the universe with Learning with Chef.
+url: https://www.learningwithchef.com
+baseurl: ""
+
+markdown: kramdown
+
+collections:
+  videos:
+    output: true
+    permalink: /videos/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: videos
+    values:
+      layout: video
+      body_class: video-page
+
+exclude:
+  - README.md
+  - web-mobile-mockup.png
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
